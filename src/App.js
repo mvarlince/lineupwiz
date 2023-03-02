@@ -1,10 +1,12 @@
 import './App.css';
-
+import Header from './components/Header';
+import Home from './scenes/Home';
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
       <>
-      <h1> LINEUP WIZ </h1>
-      
+        <Header />          
+        <Home />
       </>
   );
 }
