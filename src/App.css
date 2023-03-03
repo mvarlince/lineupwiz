@@ -2,9 +2,45 @@
   background-color: green;
 }
 
-.field{
-  width: 90%;
-  height: 100%;
+.field-container2 {
+  background-image: url("http://localhost:3000/images/field.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: red solid;
 }
 
 
+.head-pic{
+  /* background-color: red; */
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+
+  /* align-items: center; */
+}
+
+/* .field{
+  background-image: url("http://localhost:3000/images/field.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  max-width: 800px;
+  height: 800px;
+} */
+
+/* .mygrid{
+  background-image: url("http://localhost:3000/images/field.png");
+  background-size: auto;
+  background-color: red;
+  width: auto;
+  height: auto;
+} */
+
+
+/* of the element that it contains */
+/* .indiv{
+  background-color: transparent;
+  width: 33.3333339%;
+  height: 33.333333%
+} */

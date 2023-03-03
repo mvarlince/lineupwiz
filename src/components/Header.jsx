@@ -1,13 +1,15 @@
-import { Container } from "react-bootstrap"
-import logo from "../assets/images/logo.png"
+import { Col, Container, Row } from "react-bootstrap"
 
 export default function Header(){
     return (
         <>
-        <Container>
-            <div className="header-1 width={150}">
-                <img class="img-responsive" src={logo} alt="lineupWiz" />
-            </div>
+        <Container fluid>
+            <Row className="justify-content-md-center">
+                <Col  className="sir-column header ">
+                    <img className="head-pic" src="/images/logo.png" alt="lineupWiz" />
+                </Col>
+            </Row>
+
         </Container>
         </>
     )
