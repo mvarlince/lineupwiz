@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import PlayerModal from "./PlayerModal"
 
@@ -30,39 +30,40 @@ export default function Formation442 (){
         }
 
         const [showModal, setShowModal] = useState(false)
-        const [player, setPlayer] = useState()
-        const [jersey, setJersey] = useState()
+        const [player, setPlayer] = useState("default")
+        const [jersey, setJersey] = useState("default")
 
         const handleClick = () => {
             setShowModal(true)
-            // return < PlayerModal player={player} setPlayer={setPlayer} jersey={jersey} setJersey={setJersey}/>
+
         }
 
     return (
         <div style={formationStyle}>
-            <PlayerModal 
+              <PlayerModal 
                 player={player}
                 setPlayer={setPlayer}
                 jersey={jersey}
                 setJersey={setJersey}
+                showModal={showModal}
                 setShowModal={setShowModal}
-            />
+             />
             <Container className="field-container2">
                 <Row style={rowStyle}>
 
                     <Col sm={4} md={4} className="text-center"> </Col>
                     <Col sm={4} md={4} className="text-center">
-                        <Button onClick={handleClick()} 
+                        <Button onClick={handleClick} 
                                 style={buttonStyle} 
-                                data-toggle="modal"> 
+                                > 
                                 LF </Button>
                     </Col>
                     <Col sm={4} md={4} className="text-center">
                         <Button> RF </Button>
                     </Col>
-
                 </Row>
-                    <Row style={rowStyle}>
+
+                <Row style={rowStyle}>
                     <Col sm={3} md={3} className="text-center">
                         <Button style={buttonStyle}> LM </Button>
                     </Col>
@@ -75,9 +76,9 @@ export default function Formation442 (){
                     <Col sm={3} md={3} className="text-center">
                         <Button style={buttonStyle}> RM </Button>
                     </Col>
-
                 </Row>
-                    <Row style={rowStyle}>
+
+                <Row style={rowStyle}>
                     <Col sm={3} md={3} className="text-center">
                         <Button> LB </Button>
                     </Col>

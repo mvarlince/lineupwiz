@@ -12,6 +12,7 @@ function App() {
         <Header />  
          <Home />
         {/* <PlayerModal /> */}
+        < PlayerModal />
       </>
   );
 }
