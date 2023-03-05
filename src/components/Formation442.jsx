@@ -1,4 +1,6 @@
+import { useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
+import PlayerModal from "./PlayerModal"
 
 export default function Formation442 (){
    
@@ -27,14 +29,33 @@ export default function Formation442 (){
             // backgroundColor: 'red'
         }
 
+        const [showModal, setShowModal] = useState(false)
+        const [player, setPlayer] = useState()
+        const [jersey, setJersey] = useState()
+
+        const handleClick = () => {
+            setShowModal(true)
+            // return < PlayerModal player={player} setPlayer={setPlayer} jersey={jersey} setJersey={setJersey}/>
+        }
+
     return (
         <div style={formationStyle}>
+            <PlayerModal 
+                player={player}
+                setPlayer={setPlayer}
+                jersey={jersey}
+                setJersey={setJersey}
+                setShowModal={setShowModal}
+            />
             <Container className="field-container2">
                 <Row style={rowStyle}>
 
                     <Col sm={4} md={4} className="text-center"> </Col>
                     <Col sm={4} md={4} className="text-center">
-                        <Button style={buttonStyle}> LF </Button>
+                        <Button onClick={handleClick()} 
+                                style={buttonStyle} 
+                                data-toggle="modal"> 
+                                LF </Button>
                     </Col>
                     <Col sm={4} md={4} className="text-center">
                         <Button> RF </Button>

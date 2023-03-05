@@ -3,10 +3,10 @@ import { Container, Row, Col, Button } from "react-bootstrap"
 export default function Formation343 (){
    
         const formationStyle2 = {
-          backgroundImage: `http://localhost:3000/images/field2.webp`, //set the backround image
+          backgroundImage: `http://localhost:3000/images/field2.webp`,
           backgroundRepeat: 'no-repeat',
         //   backgroundSize: 'cover',
-          minHeight: '100vh', //set a minimum height to ensure the image covers the full screen
+          minHeight: '100vh', //set a minimum height to ensureimage covers the full screen
         //   display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

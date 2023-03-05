@@ -1,17 +1,17 @@
 import './App.css';
 import Header from './components/Header';
 import Home from './scenes/Home';
-import Formation433 from './components/Formation433';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Formation343 from './components/Formation343';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import Field from './components/Field';
+import PlayerModal from './components/PlayerModal';
 
 function App() {
   return (
       <>
-        <Header />      
+        <Header />  
          <Home />
-        {/* < Formation343 />
-        < Formation433 /> */}
+        {/* <PlayerModal /> */}
       </>
   );
 }

@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from "react-bootstrap"
 import Formation442 from "../components/Formation442"
 import Formation343 from "../components/Formation343"
 import Formation433 from "../components/Formation433"
+import Field from "../components/Field"
 
 export default function Home() {
 
@@ -30,23 +31,24 @@ export default function Home() {
                             // value={"ser"}
                             onChange={ e => setSelection(e.target.value)}
                              >
+                            < option value="" > Choose a formation </option>
                             {formations?.map( formation => (
-                                    <option key={formation._id} value={formation.formation}> {formation.formation} </option>)
+                                    <option key={formation._id} 
+                                            value={formation.formation}> {formation.formation} </option>)
                              )
                         }                           
                     </select>
-                    {/* <Button >
-                        Next
-                    </Button> */}
             </Row>
-            
+
             <Row>
-                { selection === "4-4-2" && <Formation442 /> }
-                { selection === "3-4-3" && <Formation343 /> }
-                { selection === "4-3-3" && <Formation433 /> }
+                {!selection
+                    ? < Field />
+                    :   selection === "4-4-2" && <Formation442 /> ||
+                     selection === "4-4-2" && <Formation442 /> ||
+                     selection === "4-3-3" && <Formation433 /> 
+                     }
             </Row>
         </Container>
-        
         </>
     )
 }

@@ -2,42 +2,62 @@ import { Container, Row, Col, Button } from "react-bootstrap"
 
 export default function Field ({players}) {
     
-    console.log({players})
-    
+   
+  const formationStyle = {
+    backgroundImage: `http://localhost:3000/images/field.png`, //set the backround image
+    backgroundRepeat: 'no-repeat',
+  //   backgroundSize: 'cover',
+    minHeight: '100vh', //set a minimum height to ensure the image covers the full screen
+  //   display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: '50px'
+  }
+  
+  const rowStyle = {
+    marginBottom: '250px' //add margin between rows
+  }
+   
     return(     
-        <Container className="field-container">
-            <Row sm={8}>
-                <Col sm={8} className="field">
-                    <Row >
-                        <Col>&nbsp;</Col>   
-                        <Col> <Button> LW </Button> </Col>   
-                        <Col><Button> RW </Button></Col>   
-                        <Col>&nbsp;</Col>
-                    </Row>
-                    
-                    <Row>
-                        <Col>  <Button> LM </Button> </Col>
-                        <Col> <Button> CM1 </Button>  </Col>
-                        <Col> <Button> CM2 </Button>   </Col>
-                        <Col> <Button> RM </Button> </Col>
-                    </Row>
+      <div style={formationStyle}>
+      <Container className="field-container2">
+          <Row style={rowStyle}>
 
-                    <Row>
-                        <Col> <Button> LB </Button> </Col>
-                        <Col> <Button> CB1 </Button> </Col>
-                        <Col> <Button> CB2 </Button></Col>
-                        <Col> <Button> RB </Button>  </Col>
-                    </Row>
+              <Col sm={4} md={4} className="text-center"> </Col>
+              <Col sm={4} md={4} className="text-center">
+              </Col>
+              <Col sm={4} md={4} className="text-center">
+              </Col>
 
-                    <Row>
-                        <Col> &nbsp; </Col>
-                        <Col> &nbsp; </Col>
-                        <Col> <Button> GK </Button> </Col>
-                        <Col> &nbsp; </Col>
-                        <Col> &nbsp; </Col>
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
+          </Row>
+              <Row style={rowStyle}>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+
+          </Row>
+              <Row style={rowStyle}>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+          </Row>
+
+          <Row style={rowStyle}>
+              <Col sm={12} md={12} className="text-center">
+              </Col>
+          </Row>
+          
+      </Container>
+  </div>
     )
 }
