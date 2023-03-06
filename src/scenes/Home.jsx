@@ -43,10 +43,10 @@ export default function Home() {
             <Row>
                 {!selection
                     ? < Field />
-                    :   selection === "4-4-2" && <Formation442 /> ||
-                     selection === "4-4-2" && <Formation442 /> ||
-                     selection === "4-3-3" && <Formation433 /> 
-                     }
+                    :   selection === "4-4-2" && <Formation442 /> 
+                    || selection === "4-4-2" && <Formation442 /> 
+                    || selection === "4-3-3" && <Formation433 /> 
+                }
             </Row>
         </Container>
         </>

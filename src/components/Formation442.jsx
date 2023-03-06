@@ -30,24 +30,39 @@ export default function Formation442 (){
         }
 
         const [showModal, setShowModal] = useState(false)
-        const [player, setPlayer] = useState("default")
-        const [jersey, setJersey] = useState("default")
+        const [label, setLabel] = useState("")
+        const [player, setPlayer] = useState([])
+
+        // may not need
+        const [playerName, setPlayerName] = useState("name")
+        const [jersey, setJersey] = useState("jersey")
 
         const handleClick = () => {
             setShowModal(true)
-
         }
 
+        useEffect( () => {
+            fetch('http://localhost:4040/players')
+            .then(res => res.json())
+            .then(data => setPlayer(data))
+            .catch(console.error)
+        },[] )
+
+        // console.log(player)
+
     return (
-        <div style={formationStyle}>
+        <div className="field-div" style={formationStyle}>
+
               <PlayerModal 
-                player={player}
-                setPlayer={setPlayer}
-                jersey={jersey}
-                setJersey={setJersey}
                 showModal={showModal}
                 setShowModal={setShowModal}
-             />
+                label={label}
+                setLabel={setLabel}
+                playerName={playerName}
+                setPlayerName={setPlayerName}
+                jersey={jersey}
+                setJersey={setJersey} />
+
             <Container className="field-container2">
                 <Row style={rowStyle}>
 
@@ -56,46 +71,52 @@ export default function Formation442 (){
                         <Button onClick={handleClick} 
                                 style={buttonStyle} 
                                 > 
-                                LF </Button>
+                                {label}
+                        </Button>
+                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {player.name} </p>
+                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {jersey} </p>
+                        
                     </Col>
                     <Col sm={4} md={4} className="text-center">
-                        <Button> RF </Button>
+                        <Button onClick={handleClick}> RF </Button>
                     </Col>
                 </Row>
 
                 <Row style={rowStyle}>
                     <Col sm={3} md={3} className="text-center">
-                        <Button style={buttonStyle}> LM </Button>
+                        <Button onClick={handleClick}  style={buttonStyle} > LM </Button>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button style={buttonStyle}> CM1 </Button>
+                        <Button onClick={handleClick}  style={buttonStyle}> CM1 </Button>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button style={buttonStyle}> CM2 </Button>
+                        <Button onClick={handleClick}  style={buttonStyle}> CM2 </Button>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button style={buttonStyle}> RM </Button>
+                        <Button onClick={handleClick}  style={buttonStyle}> RM </Button>
                     </Col>
                 </Row>
 
                 <Row style={rowStyle}>
                     <Col sm={3} md={3} className="text-center">
-                        <Button> LB </Button>
+                        <Button onClick={handleClick} > LB </Button>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button> CB1 </Button>
+                        <Button onClick={handleClick} > CB1 </Button>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button> CB2 </Button>
+                        <Button onClick={handleClick} > CB2 </Button>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button> RB </Button>
+                        <Button onClick={handleClick} > RB </Button>
                     </Col>
                 </Row>
 
                 <Row style={rowStyle}>
                     <Col sm={12} md={12} className="text-center">
-                        <Button>GK</Button>
+                        <Button onClick={handleClick}> {label} </Button>
+                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {playerName} </p>
+                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {jersey} </p>
                     </Col>
                 </Row>
                 
