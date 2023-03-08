@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
-import PlayerModal from "./PlayerModal"
+import PlayerCard from "./PlayerCard"
+import Field from "./Field"
 
 export default function Formation442 (){
    
@@ -16,7 +17,7 @@ export default function Formation442 (){
         }
         
         const rowStyle = {
-          marginBottom: '250px' //add margin between rows
+          marginBottom: '250px', //add margin between rows
         }
 
         const buttonStyle = {
@@ -29,94 +30,144 @@ export default function Formation442 (){
             // backgroundColor: 'red'
         }
 
-        const [showModal, setShowModal] = useState(false)
-        const [label, setLabel] = useState("")
-        const [player, setPlayer] = useState([])
+        const [players, setPlayers] = useState([])
+        // const [playerName, setPlayerName] = useState("")
+        // const [jersey, setJersey] = useState()  
 
-        // may not need
-        const [playerName, setPlayerName] = useState("name")
-        const [jersey, setJersey] = useState("jersey")
-
-        const handleClick = () => {
-            setShowModal(true)
-        }
-
+        
         useEffect( () => {
-            fetch('http://localhost:4040/players')
+            fetch('http://localhost:4040/players/442')
             .then(res => res.json())
-            .then(data => setPlayer(data))
+            .then(data => setPlayers(data))
             .catch(console.error)
         },[] )
-
-        // console.log(player)
+        
+        const toggleDone = (playerName, jersey, player) => {
+            fetch(`http://localhost:4040/players/442/${player._id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({playerName, jersey})
+            })
+            .then(res => res.json())
+            .then()
+            .catch(console.error)
+        }
 
     return (
+
+        // { !players  
+        //     ? <Field />
+        //     : <p> ser </p>}
+
+
         <div className="field-div" style={formationStyle}>
 
-              <PlayerModal 
-                showModal={showModal}
-                setShowModal={setShowModal}
-                label={label}
-                setLabel={setLabel}
-                playerName={playerName}
-                setPlayerName={setPlayerName}
-                jersey={jersey}
-                setJersey={setJersey} />
+
 
             <Container className="field-container2">
                 <Row style={rowStyle}>
 
-                    <Col sm={4} md={4} className="text-center"> </Col>
-                    <Col sm={4} md={4} className="text-center">
-                        <Button onClick={handleClick} 
-                                style={buttonStyle} 
-                                > 
-                                {label}
-                        </Button>
-                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {player.name} </p>
-                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {jersey} </p>
-                        
+                    <Col sm={3} md={3} className="text-center">  </Col>
+                    <Col sm={3} md={3}  className="text-center">
+                        <PlayerCard position="LF" 
+                                        player={players.find(p => p._id === 'LF')} 
+                                            toggleDone = {toggleDone}
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                    />
                     </Col>
-                    <Col sm={4} md={4} className="text-center">
-                        <Button onClick={handleClick}> RF </Button>
+                    <Col sm={3} md={3} className="text-center">
+                        <PlayerCard position="RF" 
+                                        player={players.find(p => p._id === 'RF')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                    />
+                    </Col>
+                    <Col sm={3} md={3} className="text-center"> </Col>
+                </Row>
+
+                <Row style={rowStyle}>
+                    <Col sm={3} md={3} className="text-center">
+                        <PlayerCard position="LM" 
+                                        player={players.find(p => p._id === 'LM')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                    />
+                    </Col>
+                    <Col sm={3} md={3} className="text-center">
+                        <PlayerCard position="CM1" 
+                                        player={players.find(p => p._id === 'CM1')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                    />
+                    </Col>
+                    <Col sm={3} md={3} className="text-center">
+                        <PlayerCard position="CM2" 
+                                        player={players.find(p => p._id === 'CM2')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                        />
+                    </Col>
+                    <Col sm={3} md={3} className="text-center">
+                        <PlayerCard position="RM" 
+                                        player={players.find(p => p._id === 'RM')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                        />
                     </Col>
                 </Row>
 
                 <Row style={rowStyle}>
                     <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick}  style={buttonStyle} > LM </Button>
+                        <PlayerCard position="LB" 
+                                        player={players.find(p => p._id === 'LB')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                    />
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick}  style={buttonStyle}> CM1 </Button>
+                        <PlayerCard position="CB1" 
+                                        player={players.find(p => p._id === 'CB1')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                    />
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick}  style={buttonStyle}> CM2 </Button>
+                        <PlayerCard position="CB2" 
+                                        player={players.find(p => p._id === 'CB2')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                    />
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick}  style={buttonStyle}> RM </Button>
-                    </Col>
-                </Row>
-
-                <Row style={rowStyle}>
-                    <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick} > LB </Button>
-                    </Col>
-                    <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick} > CB1 </Button>
-                    </Col>
-                    <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick} > CB2 </Button>
-                    </Col>
-                    <Col sm={3} md={3} className="text-center">
-                        <Button onClick={handleClick} > RB </Button>
+                        <PlayerCard position="RB" 
+                                        player={players.find(p => p._id === 'RB')} 
+                                            // setPlayerName={setPlayerName} 
+                                            //     setJersey={setJersey} 
+                                            //         setShowModal={setShowModal}
+                                                        />
                     </Col>
                 </Row>
 
                 <Row style={rowStyle}>
                     <Col sm={12} md={12} className="text-center">
-                        <Button onClick={handleClick}> {label} </Button>
-                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {playerName} </p>
-                        <p className="text-white" style={{ fontSize: '24px', fontWeight: 'bold' }}> {jersey} </p>
+                        <PlayerCard position="GK" 
+                                        player={players.find(p => p._id === 'GK')} 
+                                                // setPlayerName={setPlayerName} 
+                                                //     setJersey={setJersey} 
+                                                //         setShowModal={setShowModal}
+                                                        />
                     </Col>
                 </Row>
                 

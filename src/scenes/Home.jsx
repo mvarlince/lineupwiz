@@ -10,16 +10,13 @@ export default function Home() {
     const [formations, setFormations] = useState()
     const [selection, setSelection] = useState()
 
-    console.log(formations)
-    console.log(selection)
-
     useEffect( () => {
         fetch('http://localhost:4040/formation')
         .then(res => res.json())
         .then(data => setFormations(data))
         .catch(console.error)
     },[] )
-
+    
     return (
         <>
         <Container className="field-container">
@@ -41,6 +38,7 @@ export default function Home() {
             </Row>
 
             <Row>
+                <h2> Click on a player button to edit name and jersey number </h2>
                 {!selection
                     ? < Field />
                     :   selection === "4-4-2" && <Formation442 /> 
