@@ -9,7 +9,7 @@ export default function Formation442 (){
           backgroundImage: `http://localhost:3000/images/field.png`, //set the backround image
           backgroundRepeat: 'no-repeat',
         //   backgroundSize: 'cover',
-          minHeight: '100vh', //set a minimum height to ensure the image covers the full screen
+          minHeight: '70vh', //set a minimum height to ensure the image covers the full screen
         //   display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -31,61 +31,44 @@ export default function Formation442 (){
         }
 
         const [players, setPlayers] = useState([])
-        // const [playerName, setPlayerName] = useState("")
-        // const [jersey, setJersey] = useState()  
 
-        
+        const formation = 442
+
         useEffect( () => {
-            fetch('http://localhost:4040/players/442')
+            fetch(`http://localhost:4040/formation/${formation}`)
             .then(res => res.json())
             .then(data => setPlayers(data))
             .catch(console.error)
         },[] )
         
-        const toggleDone = (playerName, jersey, player) => {
-            fetch(`http://localhost:4040/players/442/${player._id}`, {
+        const toggleDone = (name, jersey, player) => {
+            fetch(`http://localhost:4040/players/${formation}/${player._id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type":"application/json"
                 },
-                body: JSON.stringify({playerName, jersey})
+                body: JSON.stringify({name, jersey})
             })
             .then(res => res.json())
-            .then()
+            .then(setPlayers)
             .catch(console.error)
         }
 
     return (
-
-        // { !players  
-        //     ? <Field />
-        //     : <p> ser </p>}
-
-
         <div className="field-div" style={formationStyle}>
-
-
-
             <Container className="field-container2">
-                <Row style={rowStyle}>
 
+                <Row style={rowStyle}>
                     <Col sm={3} md={3} className="text-center">  </Col>
                     <Col sm={3} md={3}  className="text-center">
                         <PlayerCard position="LF" 
                                         player={players.find(p => p._id === 'LF')} 
-                                            toggleDone = {toggleDone}
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                    />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="RF" 
                                         player={players.find(p => p._id === 'RF')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                    />
+                                        toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center"> </Col>
                 </Row>
@@ -94,34 +77,22 @@ export default function Formation442 (){
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="LM" 
                                         player={players.find(p => p._id === 'LM')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                    />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="CM1" 
                                         player={players.find(p => p._id === 'CM1')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                    />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="CM2" 
                                         player={players.find(p => p._id === 'CM2')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                        />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="RM" 
                                         player={players.find(p => p._id === 'RM')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                        />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                 </Row>
 
@@ -129,34 +100,22 @@ export default function Formation442 (){
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="LB" 
                                         player={players.find(p => p._id === 'LB')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                    />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="CB1" 
                                         player={players.find(p => p._id === 'CB1')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                    />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="CB2" 
                                         player={players.find(p => p._id === 'CB2')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                    />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                     <Col sm={3} md={3} className="text-center">
                         <PlayerCard position="RB" 
                                         player={players.find(p => p._id === 'RB')} 
-                                            // setPlayerName={setPlayerName} 
-                                            //     setJersey={setJersey} 
-                                            //         setShowModal={setShowModal}
-                                                        />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                 </Row>
 
@@ -164,10 +123,7 @@ export default function Formation442 (){
                     <Col sm={12} md={12} className="text-center">
                         <PlayerCard position="GK" 
                                         player={players.find(p => p._id === 'GK')} 
-                                                // setPlayerName={setPlayerName} 
-                                                //     setJersey={setJersey} 
-                                                //         setShowModal={setShowModal}
-                                                        />
+                                            toggleDone = {toggleDone}/>
                     </Col>
                 </Row>
                 

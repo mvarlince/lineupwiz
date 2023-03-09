@@ -28,20 +28,25 @@ export default function Field ({players}) {
               </Col>
               <Col sm={4} md={4} className="text-center">
               </Col>
-
           </Row>
-              <Row style={rowStyle}>
-              <Col sm={3} md={3} className="text-center">
-              </Col>
-              <Col sm={3} md={3} className="text-center">
-              </Col>
-              <Col sm={3} md={3} className="text-center">
-              </Col>
-              <Col sm={3} md={3} className="text-center">
-              </Col>
 
+          <Row style={rowStyle}>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
+              <Col sm={3} md={3} className="text-center">
+              </Col>
           </Row>
-              <Row style={rowStyle}>
+          <Row> 
+            <h3 className="text-white text-center "> LET'S PLAY FOOTBALL </h3>
+          </Row>
+          
+          <Row style={rowStyle}>
               <Col sm={3} md={3} className="text-center">
               </Col>
               <Col sm={3} md={3} className="text-center">

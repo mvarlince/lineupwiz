@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { Container, Row, Col, Button } from "react-bootstrap"
+import { Container, Row } from "react-bootstrap"
 import Formation442 from "../components/Formation442"
 import Formation343 from "../components/Formation343"
 import Formation433 from "../components/Formation433"
+import Formation352 from "../components/Formation352"
 import Field from "../components/Field"
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
     const [selection, setSelection] = useState()
 
     useEffect( () => {
-        fetch('http://localhost:4040/formation')
+        fetch('http://localhost:4040/formations')
         .then(res => res.json())
         .then(data => setFormations(data))
         .catch(console.error)
@@ -20,30 +21,27 @@ export default function Home() {
     return (
         <>
         <Container className="field-container">
-            <Row className="text-white">
+            <Row className="text-white" >
                     <h2>Choose a formation</h2>
-
                     <select className="form-select" 
                             aria-label="Default select example"
-                            // value={"ser"}
-                            onChange={ e => setSelection(e.target.value)}
-                             >
+                            onChange={ e => setSelection(e.target.value)}>
                             < option value="" > Choose a formation </option>
                             {formations?.map( formation => (
                                     <option key={formation._id} 
                                             value={formation.formation}> {formation.formation} </option>)
-                             )
-                        }                           
+                             )}                           
                     </select>
             </Row>
 
             <Row>
-                <h2> Click on a player button to edit name and jersey number </h2>
+                <h2 className="text-white text-bold" > Click on a player button to edit name and jersey number </h2>
                 {!selection
                     ? < Field />
                     :   selection === "4-4-2" && <Formation442 /> 
-                    || selection === "4-4-2" && <Formation442 /> 
                     || selection === "4-3-3" && <Formation433 /> 
+                    || selection === "3-4-3" && <Formation343 /> 
+                    || selection === "3-5-2" && <Formation352 />
                 }
             </Row>
         </Container>

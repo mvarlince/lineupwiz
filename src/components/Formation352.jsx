@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import PlayerCard from "./PlayerCard"
 
-export default function Formation343 (){
+export default function Formation352 (){
    
     const formationStyle = {
         backgroundImage: `http://localhost:3000/images/field.png`, //set the backround image
@@ -27,11 +27,11 @@ export default function Formation343 (){
           // display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          // backgroundColor: 'red'
+        //   backgroundColor: 'yellow'
       }
 
       const [players, setPlayers] = useState([])
-      const formation = 343
+      const formation = 352
       
       useEffect( () => {
           fetch(`http://localhost:4040/formation/${formation}`)

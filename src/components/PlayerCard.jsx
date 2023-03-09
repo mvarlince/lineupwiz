@@ -14,7 +14,7 @@ export default function PlayerCard({ toggleDone, position, player }){
         backgroundColor: 'red'
     }
 
-    const [playerName, setPlayerName] = useState("")
+    const [name, setName] = useState("")
     const [jersey, setJersey] = useState()  
     const [showModal, setShowModal] = useState(false)
 
@@ -27,8 +27,8 @@ export default function PlayerCard({ toggleDone, position, player }){
             <PlayerModal 
                 showModal={showModal}
                 setShowModal={setShowModal}
-                playerName={playerName}
-                setPlayerName={setPlayerName}
+                name={name}
+                setName={setName}
                 jersey={jersey}
                 setJersey={setJersey}
                 toggleDone={toggleDone}
@@ -39,8 +39,7 @@ export default function PlayerCard({ toggleDone, position, player }){
                    {position} 
             </Button>
             {player?.name && <p className="text-white">{player.name}</p>}
-           {player?.jersey && <p className="text-white"> {player.jersey} </p>}
-
+            {player?.jersey && <p className="text-white"> {player.jersey} </p>}
         </>
     )
 }
