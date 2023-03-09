@@ -58,12 +58,17 @@ export default function Formation343 (){
           <Container className="field-container2">
 
               <Row style={rowStyle}>
-                  <Col sm={6} md={6}  className="text-center">
+                  <Col sm={4} md={4}  className="text-center">
                       <PlayerCard position="LF" 
                                       player={players.find(p => p._id === 'LF')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
-                  <Col sm={6} md={6} className="text-center">
+                  <Col sm={4} md={4} className="text-center">
+                      <PlayerCard position="RF" 
+                                      player={players.find(p => p._id === 'RF')} 
+                                      toggleDone = {toggleDone}/>
+                  </Col>
+                  <Col sm={4} md={4} className="text-center">
                       <PlayerCard position="RF" 
                                       player={players.find(p => p._id === 'RF')} 
                                       toggleDone = {toggleDone}/>
@@ -100,13 +105,13 @@ export default function Formation343 (){
                                           toggleDone = {toggleDone}/>
                   </Col>
                   <Col sm={4} md={4} className="text-center">
-                      <PlayerCard position="CB1" 
-                                      player={players.find(p => p._id === 'CB1')} 
+                      <PlayerCard position="CB" 
+                                      player={players.find(p => p._id === 'CB')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
                   <Col sm={4} md={4} className="text-center">
-                      <PlayerCard position="CB2" 
-                                      player={players.find(p => p._id === 'CB2')} 
+                      <PlayerCard position="RB" 
+                                      player={players.find(p => p._id === 'RB')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
               </Row>

@@ -20,6 +20,10 @@ export default function Formation352 (){
         marginBottom: '250px', //add margin between rows
       }
 
+      const rowStyle2 = {
+        marginBottom: '100px', //add margin between rows
+      }
+
       const buttonStyle = {
           borderRadius: "50%",
           width: "50px", /* adjust size as needed */
@@ -70,28 +74,41 @@ export default function Formation352 (){
                   </Col>
               </Row>
 
-              <Row style={rowStyle}>
-                  <Col sm={3} md={3} className="text-center">
-                      <PlayerCard position="LM" 
-                                      player={players.find(p => p._id === 'LM')} 
-                                          toggleDone = {toggleDone}/>
-                  </Col>
-                  <Col sm={3} md={3} className="text-center">
+                <Row style={rowStyle2}>
+                <Col sm={6} md={6} className="text-center">
                       <PlayerCard position="CM1" 
                                       player={players.find(p => p._id === 'CM1')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
-                  <Col sm={3} md={3} className="text-center">
+
+                  <Col sm={6} md={6} className="text-center">
+                      <PlayerCard position="CM3" 
+                                      player={players.find(p => p._id === 'CM3')} 
+                                          toggleDone = {toggleDone}/>
+                  </Col>
+                </Row>
+
+              <Row style={rowStyle}>
+                  
+                  <Col sm={4} md={4} className="text-center">
+                      <PlayerCard position="LM" 
+                                      player={players.find(p => p._id === 'LM')} 
+                                          toggleDone = {toggleDone}/>
+                  </Col>
+                  <Col sm={4} md={4} className="text-center">
                       <PlayerCard position="CM2" 
                                       player={players.find(p => p._id === 'CM2')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
-                  <Col sm={3} md={3} className="text-center">
+                  <Col sm={4} md={4} className="text-center">
                       <PlayerCard position="RM" 
                                       player={players.find(p => p._id === 'RM')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
+
               </Row>
+
+
 
               <Row style={rowStyle}>
                   <Col sm={4} md={4} className="text-center">
@@ -100,13 +117,13 @@ export default function Formation352 (){
                                           toggleDone = {toggleDone}/>
                   </Col>
                   <Col sm={4} md={4} className="text-center">
-                      <PlayerCard position="CB1" 
-                                      player={players.find(p => p._id === 'CB1')} 
+                      <PlayerCard position="CB" 
+                                      player={players.find(p => p._id === 'CB')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
                   <Col sm={4} md={4} className="text-center">
-                      <PlayerCard position="CB2" 
-                                      player={players.find(p => p._id === 'CB2')} 
+                      <PlayerCard position="RB" 
+                                      player={players.find(p => p._id === 'RB')} 
                                           toggleDone = {toggleDone}/>
                   </Col>
               </Row>
