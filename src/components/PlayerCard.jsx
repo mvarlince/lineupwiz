@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import PlayerModal from "./PlayerModal";
 
-export default function PlayerCard({ toggleDone, position, player }){
+export default function PlayerCard({ toggleDone, position, player }) {
 
     const buttonStyle = {
         borderRadius: "50%",
@@ -12,10 +12,10 @@ export default function PlayerCard({ toggleDone, position, player }){
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: 'red'
-    }
+    } 
 
     const [name, setName] = useState("")
-    const [jersey, setJersey] = useState()  
+    const [jersey, setJersey] = useState()
     const [showModal, setShowModal] = useState(false)
 
     const handleClick = () => {
@@ -24,7 +24,7 @@ export default function PlayerCard({ toggleDone, position, player }){
 
     return (
         <>
-            <PlayerModal 
+            <PlayerModal
                 showModal={showModal}
                 setShowModal={setShowModal}
                 name={name}
@@ -34,11 +34,11 @@ export default function PlayerCard({ toggleDone, position, player }){
                 toggleDone={toggleDone}
                 player={player}
                 toggleDoneFunction={toggleDone}
-                />
-            <Button style={buttonStyle}  onClick={handleClick}> 
-                   {position} 
+            />
+            <Button style={buttonStyle} onClick={handleClick}>
+                {position}
             </Button>
-            {player?.name && <p className="text-white">{player.name}</p>}
+            {player?.name && <p className="text-white ">{player.name}</p>}
             {player?.jersey && <p className="text-white"> {player.jersey} </p>}
         </>
     )
