@@ -5,16 +5,12 @@ export default function HeaderText({currentImage, setCurrentImage}) {
 
     const handleClick = () => {
         setCurrentImage((currentImage + 1) % images.length);
+        console.log(currentImage)
       }
       
       const images = [
-        '/images/ronaldo.png',
-        '/images/pulisic.png',
-       // '/images/modric.png',
-        '/images/pogba.png',
-        'images/messi.png',
-        '/images/neymar.png',
-        '/images/mbappe.png'
+        '/images/bg2.webp',
+        '/images/bg3.webp'
     ]
 
     return (
