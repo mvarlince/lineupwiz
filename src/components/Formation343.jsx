@@ -5,43 +5,46 @@ import PlayerCard from "./PlayerCard"
 
 export default function Formation343() {
 
-    const formationStyle = {
-        backgroundImage: `http://localhost:3000/images/field.png`, //set the backround image
+    const fieldContainer2 = {
+        backgroundImage: 'url("/images/field.png")',
         backgroundRepeat: 'no-repeat',
-        //   backgroundSize: 'cover',
-        minHeight: '70vh', //set a minimum height to ensure the image covers the full screen
-        //   display: 'flex',
-        justifyContent: 'center',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        // border: 'red solid' (commented out)
+      };
+
+    const formationStyle = {
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+         //set a minimum height to ensure the image covers the full screen
+        // width: 'cover',       
+        //  minHeight: '70vh',
+          display: 'flex',
+        // justifyContent: 'center',
+        // width: "cover",
         alignItems: 'center',
-        paddingTop: '50px'
+        paddingTop: '20px',
+        transform: 'scale(45%)',
+        position: 'relative',
+        top: '-27%'
     }
 
     const rowStyle = {
         marginBottom: '250px', //add margin between rows
     }
 
-    // const buttonStyle = {
-    //     borderRadius: "50%",
-    //     width: "50px", /* adjust size as needed */
-    //     height: "50px",
-    //     // display: "flex",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     // backgroundColor: 'red'
-    // }
-
     const [players, setPlayers] = useState([])
     const formation = 343
 
     useEffect(() => {
-        fetch(`http://localhost:4040/formation/${formation}`)
+        fetch(`https://api.lineupwiz.soccer:4040/formation/${formation}`)
             .then(res => res.json())
             .then(data => setPlayers(data))
             .catch(console.error)
     }, [])
 
     const toggleDone = (name, jersey, player) => {
-        fetch(`http://localhost:4040/players/${formation}/${player._id}`, {
+        fetch(`https://api.lineupwiz.soccer:4040/players/${formation}/${player._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -55,8 +58,7 @@ export default function Formation343() {
 
     return (
         <div className="field-div" style={formationStyle}>
-            <Container className="field-container2">
-
+            <Container style={fieldContainer2}>
                 <Row style={rowStyle}>
                     <Col sm={4} md={4} className="text-center">
                         <PlayerCard position="LF"
@@ -92,7 +94,7 @@ export default function Formation343() {
                             toggleDone={toggleDone} />
                     </Col>
                     <Col sm={3} md={3} className="text-center">
-                        <PlayerCard position="RM"
+                        <PlayerCard position="RM" 
                             player={players.find(p => p._id === 'RM')}
                             toggleDone={toggleDone} />
                     </Col>

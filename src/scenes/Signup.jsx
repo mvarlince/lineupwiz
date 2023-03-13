@@ -12,7 +12,8 @@ const firebaseConfig = {
 };
 
 export default function SignUp({ setUser, setIsUser }) {
-    const handleSubmit = async ({ email, password }) => {
+    const handleSubmit = async ( e, { email, password }) => {
+        e.preventDefault();
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app)
         const _user = await createUserWithEmailAndPassword(auth, email, password)

@@ -1,26 +1,42 @@
 import { Container, Row, Col, Button } from "react-bootstrap"
 
-export default function Field ({players}) {
-    
-   
-  const formationStyle = {
-    backgroundImage: `http://localhost:3000/images/field.png`, //set the backround image
+export default function Field () {
+
+  const fieldContainer2 = {
+    backgroundImage: 'url("/images/fieldfull.webp")',
     backgroundRepeat: 'no-repeat',
-  //   backgroundSize: 'cover',
-    minHeight: '100vh', //set a minimum height to ensure the image covers the full screen
-  //   display: 'flex',
-    justifyContent: 'center',
+    // backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    // border: 'red solid'
+  };
+
+  const formationStyle = {
+    backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+     //set a minimum height to ensure the image covers the full screen    
+    //  minHeight: '70vh',
+      display: 'flex',
+    // justifyContent: 'center',
+    // width: "cover",
     alignItems: 'center',
-    paddingTop: '50px'
-  }
-  
-  const rowStyle = {
-    marginBottom: '250px' //add margin between rows
-  }
+    paddingTop: '20px',
+    transform: 'scale(70%)',
+    position: 'relative',
+    top: '-12%',
+    // border: 'red solid'
+}
+
+
+    
+
+
+const rowStyle = {
+    marginBottom: '250px', //add margin between rows
+}
    
     return(     
       <div style={formationStyle}>
-      <Container className="field-container2">
+      <Container style={fieldContainer2}>
           <Row style={rowStyle}>
 
               <Col sm={4} md={4} className="text-center"> </Col>
@@ -43,7 +59,7 @@ export default function Field ({players}) {
               </Col>
           </Row>
           <Row> 
-            <h3 className="text-white text-center "> LET'S PLAY FOOTBALL </h3>
+            <h3 className="text-white text-center "> LET'S PLAY FOOTBALL ⚽️</h3>
           </Row>
           
           <Row style={rowStyle}>

@@ -6,13 +6,21 @@ export default function PlayerCard({ toggleDone, position, player }) {
 
     const buttonStyle = {
         borderRadius: "50%",
-        width: "50px", /* adjust size as needed */
-        height: "50px",
+        width: "70px", /* adjust size as needed */
+        height: "70px",
         // display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: 'red'
+        backgroundColor: 'red',
+        fontSize: "1.5em",
+        fontWeight: "800",
+        boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)" 
     } 
+
+    const nameJersey = {
+        fontSize: "2em",
+        marginBottom: "2px"
+      }
 
     const [name, setName] = useState("")
     const [jersey, setJersey] = useState()
@@ -38,8 +46,8 @@ export default function PlayerCard({ toggleDone, position, player }) {
             <Button style={buttonStyle} onClick={handleClick}>
                 {position}
             </Button>
-            {player?.name && <p className="text-white ">{player.name}</p>}
-            {player?.jersey && <p className="text-white"> {player.jersey} </p>}
+            {player?.name && <p style={nameJersey} className="text-white ">{player.name}</p>}
+            {player?.jersey && <p style={nameJersey} className="text-white"> {player.jersey} </p>}
         </>
     )
 }

@@ -37,7 +37,8 @@ export default function Login({ setUser, setIsUser }) {
     }
 
     return (
-        <section>
+        <section style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "90vh" }} >
+            <div> 
             <h1 className="text-white">Login</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
@@ -58,6 +59,7 @@ export default function Login({ setUser, setIsUser }) {
 
             <Button onClick={loginWithGoogle}>Login with Google</Button>
             <p className="text-center text-white">NOT A USER? <Button onClick={() => setIsUser(false)}>Sign Up</Button></p>
+            </div>
         </section>
     )
 }

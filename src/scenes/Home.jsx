@@ -7,13 +7,23 @@ import Formation433 from "../components/Formation433"
 import Field from "../components/Field"
 import Formation352 from "../components/Formation352"
 
-export default function Home() {
+export default function Home({currentImage, setCurrentImage}) {
 
     const [formations, setFormations] = useState()
     const [selection, setSelection] = useState()
 
+    const images = [
+        '/images/ronaldo.png',
+        '/images/pulisic.png',
+    //    '/images/modric.png',
+        '/images/pogba.png',
+        'images/messi.png',
+        '/images/neymar.png',
+        '/images/mbappe.png'
+    ]
+
     useEffect(() => {
-        fetch('http://localhost:4040/formations')
+        fetch('https://api.lineupwiz.soccer:4040/formations')
             .then(res => res.json())
             .then(data => setFormations(data))
             .catch(console.error)
@@ -25,29 +35,33 @@ export default function Home() {
                 <Container className="field-container">
                     <Row className="text-white">
                         <Col sm={12}>
-                        <h2>Choose a formation</h2>
-                        <select className="form-select"
-                            aria-label="Default select example"
-                            onChange={e => setSelection(e.target.value)}>
-                            < option value="" > Choose a formation </option>
-                            {formations?.map(formation => (
-                                <option key={formation._id}
-                                    value={formation.formation}> {formation.formation} </option>)
-                            )}
-                        </select>
+                            <h3>Choose a formation</h3>
+                            <select className="form-select"
+                                aria-label="Default select example"
+                                onChange={e => setSelection(e.target.value)}>
+                                < option value="" > Choose a formation </option>
+                                {formations?.map(formation => (
+                                    <option key={formation._id}
+                                        value={formation.formation}> {formation.formation} </option>)
+                                )}
+                            </select>
                         </Col>
-
-
-                        <Col className="test"  sm={12}>
-                        {!selection
-                            ? < Field />
-                            : 
-                                selection === "4-4-2" && <Formation442  />
-                                || selection === "4-3-3" && <Formation433  />
-                                || selection === "3-4-3" && <Formation343  />
-                                || selection === "3-5-2" && <Formation352  />
-                        }
-                        </Col>
+                      
+                        <div className="formations-wrapper">
+                            <Col className="formations" sm={12}>
+                                {!selection
+                                    ? < Field />
+                                    :
+                                    selection === "4-4-2" && <Formation442 />
+                                    || selection === "4-3-3" && <Formation433 />
+                                    || selection === "3-4-3" && <Formation343 />
+                                    || selection === "3-5-2" && <Formation352 />
+                                    
+                                }
+                            </Col>
+                            {/* <img className="messi" src="/images/messi.png" alt="messi" /> */}
+                            <img className={"players"} src={images[currentImage]} alt="current image" />
+                        </div>
                     </Row>
                 </Container>
             </div>
