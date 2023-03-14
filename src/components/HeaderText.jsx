@@ -1,6 +1,5 @@
 import { Container } from "react-bootstrap";
 
-
 export default function HeaderText({currentImage, setCurrentImage}) {
 
     const handleClick = () => {
@@ -10,7 +9,8 @@ export default function HeaderText({currentImage, setCurrentImage}) {
       
       const images = [
         '/images/bg2.webp',
-        '/images/bg3.webp'
+        '/images/bg3.webp',
+        '/images/bg4.webp'
     ]
 
     return (
@@ -20,7 +20,6 @@ export default function HeaderText({currentImage, setCurrentImage}) {
                     <h1 className="header-title">Lineupwiz<img src="/images/socc2.gif" onClick={handleClick}/></h1>
                 </Container>
             </header>
-
         </>
     )
 }

@@ -18,7 +18,7 @@ export default function PlayerCard({ toggleDone, position, player }) {
     } 
 
     const nameJersey = {
-        fontSize: "3em",
+        fontSize: "2em",
         marginBottom: "2px"
       }
 

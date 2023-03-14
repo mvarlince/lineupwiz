@@ -37,7 +37,7 @@ export default function Login({ setUser, setIsUser }) {
     }
 
     return (
-        <section style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "90vh" }} >
+        <section style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "90vh", width:"200px" }} >
             <div> 
             <h1 className="text-white">Login</h1>
             <Form onSubmit={handleSubmit}>

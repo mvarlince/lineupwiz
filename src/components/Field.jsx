@@ -26,14 +26,9 @@ export default function Field () {
     // border: 'red solid'
 }
 
-
-    
-
-
 const rowStyle = {
     marginBottom: '250px', //add margin between rows
 }
-   
     return(     
       <div style={formationStyle}>
       <Container style={fieldContainer2}>
@@ -59,7 +54,7 @@ const rowStyle = {
               </Col>
           </Row>
           <Row> 
-            <h3 className="text-white text-center "> LET'S PLAY FOOTBALL ⚽️</h3>
+            <h3 className="text-white text-center ">⚽️</h3>
           </Row>
           
           <Row style={rowStyle}>

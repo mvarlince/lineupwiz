@@ -63,7 +63,7 @@ export default function Formation433() {
         <> <h6 className="field-component text-white text-bold text-center" > Click on position to edit player name and number </h6>
             <div style={formationStyle}>
 
-                <Container style={fieldContainer2} className="field-container2">
+                <Container style={fieldContainer2} className="field-container2 jojo" >
                     <Row style={rowStyle}>
 
                         <Col sm={4} md={4} className="text-center">

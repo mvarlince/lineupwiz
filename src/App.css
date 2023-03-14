@@ -8,7 +8,7 @@
 
  .field-div{
   width:100%;
-  border: rgb(226, 214, 214) solid;
+  /* border: rgb(226, 214, 214) solid; */
  }
 
  .field-component{
@@ -123,4 +123,9 @@
   max-width: 500px;
   position: center;
   margin: auto;
+}
+
+.jojo{
+  border: 5px solid #aaccaf;
+  width: 1500px !important;
 }

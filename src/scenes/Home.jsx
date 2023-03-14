@@ -14,10 +14,13 @@ export default function Home({currentImage}) {
 
     const images = [
         '/images/bg2.webp',
-        '/images/bg3.webp'
+        '/images/bg3.webp',
+        '/images/bg4.webp'
     ]
 
     useEffect(() => {
+        // http://localhost:4040/
+        // https://api.lineupwiz.soccer:4040/
         fetch('https://api.lineupwiz.soccer:4040/formations')
             .then(res => res.json())
             .then(data => setFormations(data))
@@ -67,9 +70,6 @@ export default function Home({currentImage}) {
                     </Row>
                     
                 </Container>
-                {/* <div className="formations-wrapper2">
-                            <img className="messi" src="/images/messi.png" alt="messi" />
-                </div> */}
             </div>
         </>
     )
