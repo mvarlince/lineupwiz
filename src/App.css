@@ -109,19 +109,19 @@
   }
 }
 
-/* #test {
-  background-image: url('/public/images/bg2.webp');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-} */
-
 .custom-select {
   width: 70%;
   max-width: 500px;
   position: center;
+  margin: auto;
+  /* border: 2px solid red !important; */
+  padding: 7px !important;
+  background-color: #aaccaf !important;
+  font-size: 20px !important;
+}
+
+.custom-select2{
+  background-color: #aaccaf !important;
   margin: auto;
 }
 
@@ -129,3 +129,27 @@
   border: 5px solid #aaccaf;
   width: 1500px !important;
 }
+
+.login{
+  margin: 10px;
+  background-color: #b1ee6b !important;
+  color: black !important;
+}
+
+.google{
+/* border: red 5px solid !important; */
+margin: 10px;
+background-color: #b1ee6b !important;
+color: black !important;
+}
+
+.signup{
+  /* border: red 5px solid !important; */
+  margin: 10px;
+  background-color: #b1ee6b !important;
+color: black !important;
+  }
+
+/* .custom-select3::placeholder{
+  text-align: center;
+} */

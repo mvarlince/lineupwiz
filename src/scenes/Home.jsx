@@ -14,8 +14,9 @@ export default function Home({currentImage}) {
 
     const images = [
         '/images/bg2.webp',
+        '/images/bg5.webp',
+        '/images/bg4.webp',
         '/images/bg3.webp',
-        '/images/bg4.webp'
     ]
 
     useEffect(() => {
@@ -41,13 +42,13 @@ export default function Home({currentImage}) {
                 <Container className="field-container">
                     <Row className="text-white">
                         <Col sm={12}>
-                            <h3 className="text-center">Choose a formation</h3>
+                            {/* <h3 className="text-center">Choose a formation</h3> */}
                             <select className="form-select custom-select"
                                 aria-label="Default select example"
                                 onChange={e => setSelection(e.target.value)}>
-                                < option value="" > Choose a formation </option>
+                                < option className="custom-select3" value="" > Choose a formation </option>
                                 {formations?.map(formation => (
-                                    <option key={formation._id}
+                                    <option className="custom-select3" key={formation._id}
                                         value={formation.formation}> {formation.formation} </option>)
                                 )}
                             </select>

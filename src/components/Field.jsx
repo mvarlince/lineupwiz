@@ -8,6 +8,8 @@ export default function Field () {
     // backgroundSize: 'cover',
     backgroundPosition: 'center',
     // border: 'red solid'
+    borderRadius: '1%',
+    boxShadow: '0px 0px 20px rgba(35, 216, 59, 1)'
   };
 
   const formationStyle = {

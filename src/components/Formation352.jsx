@@ -11,6 +11,8 @@ export default function Formation352() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         // border: 'red solid' (commented out)
+        borderRadius: '1%',
+        boxShadow: '0px 0px 20px rgba(35, 216, 59, 1)'
       };
 
     const formationStyle = {
@@ -24,9 +26,9 @@ export default function Formation352() {
         // width: "cover",
         alignItems: 'center',
         paddingTop: '20px',
-        transform: 'scale(45%)',
         position: 'relative',
-        top: '-27%'
+        transform: 'scale(50%)',
+        top: '-25%'
     }
 
     const rowStyle = {

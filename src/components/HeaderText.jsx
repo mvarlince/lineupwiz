@@ -10,7 +10,8 @@ export default function HeaderText({currentImage, setCurrentImage}) {
       const images = [
         '/images/bg2.webp',
         '/images/bg3.webp',
-        '/images/bg4.webp'
+        '/images/bg4.webp',
+        '/images/bg5.webp'
     ]
 
     return (

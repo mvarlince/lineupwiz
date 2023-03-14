@@ -38,7 +38,7 @@ export default function Login({ setUser, setIsUser }) {
 
     return (
         <section style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "90vh", width:"200px" }} >
-            <div> 
+            <div > 
             <h1 className="text-white">Login</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
@@ -54,11 +54,11 @@ export default function Login({ setUser, setIsUser }) {
                         <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </InputGroup>
                 </Form.Group>
-                <Button className="text-center" variant="primary" type="submit" >Login</Button>
+                <Button className="login text-center" variant="primary" type="submit" >Login</Button>
             </Form>
 
-            <Button onClick={loginWithGoogle}>Login with Google</Button>
-            <p className="text-center text-white">NOT A USER? <Button onClick={() => setIsUser(false)}>Sign Up</Button></p>
+            <Button className="google" onClick={loginWithGoogle}>Login with Google</Button>
+            <p className="text-center text-white">NOT A USER? <Button className="signup" onClick={() => setIsUser(false)}>Sign Up</Button></p>
             </div>
         </section>
     )
