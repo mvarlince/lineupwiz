@@ -6,7 +6,7 @@ import PlayerCard from "./PlayerCard"
 export default function Formation343() {
 
     const fieldContainer2 = {
-        backgroundImage: 'url("/images/field.png")',
+        backgroundImage: 'url("/images/field.webp")',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -39,14 +39,15 @@ export default function Formation343() {
     const formation = 343
 
     useEffect(() => {
-        fetch(`https://api.lineupwiz.soccer:4040/formation/${formation}`)
+        fetch(`https://lineupwiz-api-fb.web.app/formation/${formation}`)
             .then(res => res.json())
             .then(data => setPlayers(data))
             .catch(console.error)
-    }, [])
+    }, [formation])
+// TEST FOR EXTRA DB CONNECTIONS
 
     const toggleDone = (name, jersey, player) => {
-        fetch(`https://api.lineupwiz.soccer:4040/players/${formation}/${player._id}`, {
+        fetch(`https://lineupwiz-api-fb.web.app/players/${formation}/${player._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"

@@ -5,7 +5,7 @@ import PlayerCard from "./PlayerCard"
 export default function Formation442() {
 
     const fieldContainer2 = {
-        backgroundImage: 'url("/images/field.png")',
+        backgroundImage: 'url("/images/field.webp")',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -41,7 +41,7 @@ export default function Formation442() {
     useEffect(() => {
         // http://localhost:4040/
         // https://api.lineupwiz.soccer:4040/
-        fetch(`https://api.lineupwiz.soccer:4040/formation/${formation}`)
+        fetch(`https://lineupwiz-api-fb.web.app/formation/${formation}`)
             .then(res => res.json())
             .then(data => setPlayers(data))
             .catch(console.error)
@@ -50,7 +50,7 @@ export default function Formation442() {
     const toggleDone = (name, jersey, player) => {
         // http://localhost:4040/
         // https://api.lineupwiz.soccer:4040/
-        fetch(`https://api.lineupwiz.soccer:4040/players/${formation}/${player._id}`, {
+        fetch(`https://lineupwiz-api-fb.web.app/players/${formation}/${player._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"

@@ -22,7 +22,7 @@ export default function Home({currentImage}) {
     useEffect(() => {
         // http://localhost:4040/
         // https://api.lineupwiz.soccer:4040/
-        fetch('https://api.lineupwiz.soccer:4040/formations')
+        fetch('https://lineupwiz-api-fb.web.app/formations')
             .then(res => res.json())
             .then(data => setFormations(data))
             .catch(console.error)
