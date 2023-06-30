@@ -10,14 +10,15 @@ import HeaderText from './components/HeaderText';
 function App() {
   const [user, setUser] = useState()
   const [isUser, setIsUser] = useState(true)
+  const [isGuest, setIsGuest] = useState(false)
   const [currentImage, setCurrentImage] = useState(0);
   return (
     <>
       <HeaderText currentImage = {currentImage} setCurrentImage={setCurrentImage}/>
-      {user
+      {user|| (isGuest)
         ? < Home user={user} currentImage = {currentImage} setCurrentImage={setCurrentImage}/>
-        : isUser
-          ? < Login setUser={setUser} setIsUser={setIsUser} />
+        : isUser 
+          ? < Login setUser={setUser} setIsUser={setIsUser} setIsGuest={setIsGuest}/>
           : < SignUp setUser={setUser} setIsUser={setIsUser} />
       }
     </>

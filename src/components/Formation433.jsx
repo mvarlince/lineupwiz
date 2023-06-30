@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 
 import { Container, Row, Col } from "react-bootstrap"
 import PlayerCard from "./PlayerCard"
-import PlayerModal from "./PlayerModal"
 
 export default function Formation433() {
 

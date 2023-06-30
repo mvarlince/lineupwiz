@@ -58,18 +58,15 @@ export default function Home({currentImage}) {
                             <Col className="formations" sm={12}>
                                 {!selection
                                     ? < Field />
-                                    :
-                                    selection === "4-4-2" && <Formation442 />
-                                    || selection === "4-3-3" && <Formation433 />
-                                    || selection === "3-4-3" && <Formation343 />
-                                    || selection === "3-5-2" && <Formation352 />
+                                    :  (selection === "4-4-2" && <Formation442 />)
+                                    || (selection === "4-3-3" && <Formation433 />)
+                                    || (selection === "3-4-3" && <Formation343 />)
+                                    || (selection === "3-5-2" && <Formation352 />)
                                     
                                 }
                             </Col>
-                            {/* <img className={"players"} src={images[currentImage]} alt="current image" /> */}
                         </div>                        
                     </Row>
-                    
                 </Container>
             </div>
         </>

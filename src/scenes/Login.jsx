@@ -12,7 +12,7 @@ const firebaseConfig = {
     appId: "1:426008830881:web:5df48b03a673fbbbd361e0"
 };
 
-export default function Login({ setUser, setIsUser }) {
+export default function Login({ setUser, setIsUser, setIsGuest }) {
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
@@ -58,7 +58,11 @@ export default function Login({ setUser, setIsUser }) {
             </Form>
 
             <Button className="google" onClick={loginWithGoogle}>Login with Google</Button>
-            <p className="text-center text-white">NOT A USER? <Button className="signup" onClick={() => setIsUser(false)}>Sign Up</Button></p>
+            <p className="text-center text-white">NOT A USER? 
+                <Button className="signup" onClick={() => setIsUser(false)}>Sign Up</Button>
+                <Button className="signup" onClick={() => setIsGuest(true)}>Continue as Guest</Button>
+                
+            </p>
             </div>
         </section>
     )
