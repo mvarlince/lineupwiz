@@ -62,7 +62,6 @@ export default function Home({currentImage}) {
                                     || (selection === "4-3-3" && <Formation433 />)
                                     || (selection === "3-4-3" && <Formation343 />)
                                     || (selection === "3-5-2" && <Formation352 />)
-                                    
                                 }
                             </Col>
                         </div>                        
